@@ -19,28 +19,28 @@ CV나 프로필 사진은 같은 파일 이름으로 교체하면 됩니다. 원
 
 ## 2. 논문과 상장 파일 정리
 
-논문·상장은 **항목마다 폴더 하나**에 모읍니다. 홈페이지에는 `figure.png` 또는 `certificate.jpg`를 사용합니다. 원본 PDF·PNG·JPG는 각 폴더의 `sources/`에 보관하며 공개하지 않습니다.
+논문·상장은 **항목마다 폴더 하나**에 모으고, 공개할 최종 `figure.png` 또는 `certificate.jpg`만 둡니다. 기존 원본 8개는 `.archive/original-figures.zip` 하나로 압축 보관합니다. 이 압축파일은 Git에서 제외해 컴퓨터에만 남깁니다.
 
 ```text
 publications/
 ├── journal/
-│   ├── shaping-filter-ekf/              # figure.png + sources/
+│   ├── shaping-filter-ekf/              # figure.png
 │   ├── aerial-threat-review/            # 현재 그림 없음
-│   ├── bayesian-cann/                   # figure.png + sources/
-│   ├── adaptive-tobit-kalman-filter/     # figure.png + sources/
-│   └── lstm-kalman-filter/              # figure.png + sources/
+│   ├── bayesian-cann/                   # figure.png
+│   ├── adaptive-tobit-kalman-filter/     # figure.png
+│   └── lstm-kalman-filter/              # figure.png
 └── conference/
     ├── threat-assessment-eda/            # 현재 그림 없음
     └── parameter-updating-dbn/           # 현재 그림 없음
 
 awards/
-├── masters-excellence-scholarship/       # certificate.jpg + sources/
-├── national-science-technology-scholarship/ # certificate.jpg + sources/
-├── ev-energy-challenger/                 # certificate.jpg + sources/
+├── masters-excellence-scholarship/       # certificate.jpg
+├── national-science-technology-scholarship/ # certificate.jpg
+├── ev-energy-challenger/                 # certificate.jpg
 └── academic-excellence-scholarships/      # 현재 그림 없음
 ```
 
-그림이 없는 폴더의 `.gitkeep`는 빈 폴더를 Git에 남겨 두는 파일입니다. 그림을 넣기 전까지 그대로 두면 됩니다. 새 상장은 생년월일과 증서번호를 가린 공개용 `certificate.jpg`를 사용하고, 원본은 `sources/`에 보존합니다.
+그림이 없는 폴더의 `.gitkeep`는 빈 폴더를 Git에 남겨 두는 파일입니다. 그림을 넣기 전까지 그대로 두면 됩니다. 새 상장은 생년월일과 증서번호를 가린 공개용 `certificate.jpg`를 사용합니다.
 
 ## 3. 연구 그림 추가·교체
 
@@ -56,7 +56,9 @@ awards/
 <article class="publication" data-type="journal" data-image="">
 ```
 
-`data-image` 속성을 넣지 않아도 글만 표시됩니다. 그림을 불러오지 못해도 글은 그대로 보입니다. 그림이 있으면 데스크톱에서 같은 크기의 왼쪽 썸네일로 배치되고, 누르면 크게 볼 수 있습니다. 좁은 모바일 화면에도 자동으로 맞춰집니다.
+`data-image` 속성을 넣지 않아도 글만 표시됩니다. 그림을 불러오지 못해도 글은 그대로 보입니다. 그림은 누르면 크게 볼 수 있습니다.
+
+데스크톱에서는 왼쪽에 폭 186px의 같은 **4:3 틀**로 배치합니다. 그림 전체가 원래 비율을 유지하며 가로·세로 중앙에 들어갑니다. 세로 그림은 좌우에, 가로 그림은 위아래에 여백이 생길 수 있습니다. 이미지 파일 자체에 들어 있는 흰 여백은 자동으로 제거하지 않습니다. 모바일에서는 원래 비율에 따라 높이를 맞추며, 최대 폭 260px·높이 210px 안에 표시합니다.
 
 ## 4. GitHub에서 홈페이지 업데이트하기
 
@@ -69,7 +71,7 @@ awards/
 3. 컴퓨터에서 고친 파일을 올릴 때는 **GitHub의 같은 폴더**를 연 뒤 **Add file → Upload files**를 누르세요. 예를 들어 연구 그림을 바꿨다면 `publications/journal/shaping-filter-ekf/` 안에서 **`figure.png` 하나만** 선택합니다. 상장은 해당 `awards/항목이름/` 안에서 **`certificate.jpg` 하나만** 선택합니다.
 4. `index.html`, `styles.css`, `script.js`는 저장소 맨 위에 올리고, CV는 `assets/` 안에 `cv.pdf`로 올리세요. 올릴 파일을 확인한 다음 **Commit changes**를 누르세요.
 
-**웹 화면의 Upload files에는 `.gitignore`의 제외 규칙이 적용되지 않습니다.** `sources/`, `CV/`, 이 작업 폴더 전체, 또는 `sources/`가 든 논문·상장 폴더를 통째로 끌어다 놓지 마세요. 공개할 `figure.png`나 `certificate.jpg` 등 사이트용 파일만 직접 선택하세요. `.gitignore`는 로컬 Git에서 원본용 `sources/`와 `CV/`를 제외하는 용도입니다.
+**웹 화면의 Upload files에는 `.gitignore`가 적용되지 않습니다.** `.archive/`, `CV/`, `.preview/`나 작업 폴더 전체를 올리지 말고, 공개할 사이트용 파일만 선택하세요. 이 세 폴더는 로컬 Git에서도 제외합니다.
 
 파일 위치를 바꾸면 `index.html`의 경로도 함께 바꿔야 합니다. GitHub에서 직접 문구를 고친 경우에는 컴퓨터 파일도 같은 내용으로 맞춰 두면 다음 업로드 때 헷갈리지 않습니다.
 
