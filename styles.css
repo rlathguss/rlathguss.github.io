@@ -83,7 +83,13 @@ h2 { font-size: 22px; font-weight: 600; letter-spacing: -.4px; line-height: 1.4;
 body.figure-is-open { overflow: hidden; }
 .background-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 58px; margin-top: 29px; }
 .background-columns .group-title { margin-bottom: 23px; }
-.background-entry { margin-top: 22px; }
+.timeline { list-style: none; margin: 0; padding: 0; }
+.background-entry { position: relative; margin: 0; border-left: 2px solid #e0e8eb; padding: 0 0 27px 20px; }
+.background-entry::before { content: ''; position: absolute; left: -2px; top: 0; bottom: 27px; width: 3px; background: #a9bfc5; }
+.background-entry.is-current::before { background: var(--accent); }
+.background-entry.is-current .date { color: var(--accent); }
+.background-entry:last-child { padding-bottom: 0; }
+.background-entry:last-child::before { bottom: 0; }
 .date { color: var(--muted); font-size: 10px; line-height: 1.6; }
 .background-entry h4 { font-size: 13px; font-weight: 600; line-height: 1.7; margin-top: 4px; }
 .background-entry p:not(.date) { font-size: 12px; color: var(--body); margin-top: 3px; line-height: 1.8; }
@@ -164,7 +170,7 @@ footer span { padding: 0 5px; color: #bac1c5; }
   .venue { font-size: 10px; line-height: 1.8; }
   .background-columns { grid-template-columns: 1fr; gap: 29px; margin-top: 25px; }
   .background-columns .group-title { margin-bottom: 17px; }
-  .background-entry { margin-top: 18px; }
+  .background-entry { padding-left: 17px; }
   .award-list li { grid-template-columns: 1fr; gap: 2px; margin-top: 20px; }
   .award-list li.has-image { grid-template-columns: minmax(0, 1fr) 72px; grid-template-areas: 'meta figure' 'body figure'; column-gap: 18px; row-gap: 3px; align-items: start; min-height: 96px; }
   .award-figure .figure-link { padding: 3px; }
