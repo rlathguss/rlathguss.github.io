@@ -1,0 +1,15 @@
+# Original CV source and LaTeX working files stay on this computer.
+CV/
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Local preview, packages, and operating-system files.
+node_modules/
+.preview/
+.DS_Store
+Thumbs.db
+*.zip
