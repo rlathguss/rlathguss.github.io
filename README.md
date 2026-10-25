@@ -2,7 +2,7 @@
 
 CV를 바탕으로 만든 영문 연구자 홈페이지입니다. [홈페이지 보기](https://sohyunkim3.github.io/) · [GitHub 파일 보관함](https://github.com/sohyunkim3/sohyunkim3.github.io)
 
-논문은 **Journal 5편**과 **Conference 2편**으로 나눕니다. Journal 안에서 상태 태그로 **Published 2편 / Preprint 3편**을 표시합니다.
+논문은 **Journal 5편**과 **Conference 2편**으로 나눕니다. Journal 안에서 상태 태그로 **Published 2편 / Under revision 2편 / Preprint 1편**을 표시합니다.
 
 ## 1. 내 컴퓨터에서 보고 고치기
 

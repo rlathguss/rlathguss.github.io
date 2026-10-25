@@ -57,6 +57,7 @@ h2 { font-size: 22px; font-weight: 600; letter-spacing: -.4px; line-height: 1.4;
 .status-tag { display: inline-flex; padding: 1px 7px; border: 1px solid; border-radius: 4px; font-size: 9px; line-height: 1.7; font-weight: 500; white-space: nowrap; }
 .status-published { color: #32654e; border-color: #d8e8df; background: #f1f7f3; }
 .status-preprint { color: #71604a; border-color: #e8e0d3; background: #faf7f1; }
+.status-revision { color: #425f85; border-color: #dce5f1; background: #f3f6fb; }
 .publication h3 { font-size: 14px; line-height: 1.65; font-weight: 600; }
 .publication h3 a { color: var(--ink); }
 .publication h3 a:hover { color: var(--accent); }
