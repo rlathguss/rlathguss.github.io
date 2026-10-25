@@ -40,7 +40,7 @@ awards/
 └── academic-excellence-scholarships/      # 현재 그림 없음
 ```
 
-그림이 없는 폴더의 `.gitkeep`는 빈 폴더를 Git에 남겨 두는 파일입니다. 그림을 넣기 전까지 그대로 두면 됩니다. 새 상장은 생년월일과 증서번호를 가린 공개용 `certificate.jpg`를 사용합니다.
+그림이 없는 폴더의 `.gitkeep`는 빈 폴더를 Git에 남겨 두는 파일입니다. 그림을 넣기 전까지 그대로 두면 됩니다. 상장 사진은 내용을 가리지 않은 `certificate.jpg`를 사용합니다.
 
 ## 3. 연구 그림 추가·교체
 
