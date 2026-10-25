@@ -13,8 +13,8 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('main > section[id]').forEach(section => observer.observe(section));
 }
 
-// A paper's optional data-image controls its figure. Missing or failed images
-// leave the original text-only article intact.
+// Optional publication and award images share one viewer. Missing or failed
+// images leave the original text-only entry intact.
 let figureViewer;
 let viewerImage;
 let viewerTitle;
@@ -66,22 +66,23 @@ function openFigure(event, link, image, title) {
   document.body.classList.add('figure-is-open');
 }
 
-for (const paper of document.querySelectorAll('.publication')) {
+for (const paper of document.querySelectorAll('.publication, .award-list li')) {
   const source = paper.dataset.image?.trim();
   if (!source) continue;
 
-  const title = paper.querySelector('.publication-body h3')?.textContent.trim() || 'Research figure';
+  const isPublication = paper.matches('.publication');
+  const title = paper.querySelector(isPublication ? '.publication-body h3' : '.award-body strong')?.textContent.trim() || 'Figure';
   const figure = document.createElement('figure');
-  figure.className = 'publication-figure';
+  figure.className = isPublication ? 'publication-figure' : 'award-figure';
   const link = document.createElement('a');
   link.className = 'figure-link';
   link.href = source;
   link.target = '_blank';
   link.rel = 'noopener';
-  link.setAttribute('aria-label', `Enlarge figure: ${title}`);
-  link.title = 'Enlarge figure';
+  link.setAttribute('aria-label', `${isPublication ? 'Enlarge figure' : 'View certificate'}: ${title}`);
+  link.title = isPublication ? 'Enlarge figure' : 'View certificate';
   const image = document.createElement('img');
-  image.alt = paper.dataset.imageAlt?.trim() || `Research figure for ${title}`;
+  image.alt = paper.dataset.imageAlt?.trim() || `Figure for ${title}`;
   image.loading = 'lazy';
   image.decoding = 'async';
   const zoom = document.createElement('span');
@@ -93,17 +94,13 @@ for (const paper of document.querySelectorAll('.publication')) {
   paper.prepend(figure);
   paper.classList.add('has-image');
 
-  if (paper.dataset.imageLayout === 'wide') paper.classList.add('has-wide-image');
   image.addEventListener('load', () => {
     image.width = image.naturalWidth;
     image.height = image.naturalHeight;
-    if (!paper.dataset.imageLayout && image.naturalWidth / image.naturalHeight >= 2.4) {
-      paper.classList.add('has-wide-image');
-    }
   });
   image.addEventListener('error', () => {
     figure.remove();
-    paper.classList.remove('has-image', 'has-wide-image');
+    paper.classList.remove('has-image');
   }, { once: true });
   link.addEventListener('click', event => openFigure(event, link, image, title));
   image.src = source;

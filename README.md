@@ -1,98 +1,82 @@
 # 개인 홈페이지 사용 안내
 
-CV를 바탕으로 만든 영문 연구자 홈페이지입니다. 간결한 한 페이지에 자기소개와 연구를 정리하고, 게재 논문과 preprint를 구분합니다. 별도 프로그램 설치 없이 열 수 있습니다.
+CV를 바탕으로 만든 영문 연구자 홈페이지입니다. [홈페이지 보기](https://sohyunkim3.github.io/) · [GitHub 파일 보관함](https://github.com/sohyunkim3/sohyunkim3.github.io)
 
-**홈페이지 주소:** [https://sohyunkim3.github.io/](https://sohyunkim3.github.io/)  
-**파일 보관함:** [sohyunkim3/sohyunkim3.github.io](https://github.com/sohyunkim3/sohyunkim3.github.io)
+논문은 **Journal 5편**과 **Conference 2편**으로 나눕니다. Journal 안에서 상태 태그로 **Published 2편 / Preprint 3편**을 표시합니다.
 
-아래에는 내용 수정 방법과 최초 공개 설정을 정리했습니다. 실제 배포 상태는 저장소의 **Settings → Pages**에서 확인할 수 있습니다.
+## 1. 내 컴퓨터에서 보고 고치기
 
-## 1. 내 컴퓨터에서 보기
+`index.html`을 두 번 클릭하면 브라우저에서 열립니다. 내용을 고칠 때는 이 파일을 메모장이나 코드 편집기로 열어 문장을 수정하고 저장하세요. 브라우저를 새로고침하면 확인할 수 있습니다. 처음에는 `<...>`로 둘러싸인 코드보다 문장만 바꾸는 것이 쉽습니다.
 
-이 폴더의 `index.html`을 두 번 클릭하면 브라우저에서 열립니다. 파일을 수정한 뒤 브라우저에서 새로고침하면 변경 내용을 볼 수 있습니다.
-
-- `index.html`: 자기소개, 연구, 논문 등 화면에 표시되는 내용
+- `index.html`: 자기소개, 논문, 수상 내역과 링크
 - `styles.css`: 색상, 글꼴, 화면 배치
-- `script.js`: 현재 읽는 구간의 메뉴 표시와 선택적 연구 그림·확대 보기. 이 파일 없이도 본문과 논문 링크는 작동합니다.
+- `script.js`: 메뉴 표시와 그림 배치·확대 보기
 - `assets/profile.png`: 프로필 사진
 - `assets/cv.pdf`: 방문자가 내려받는 CV
+- `assets/icons/`, `assets/favicon.svg`: 아이콘
 
-## 2. 내용 수정하기
+CV나 프로필 사진은 같은 파일 이름으로 교체하면 됩니다. 원본 CV 자료가 있는 `CV/`와 방문자에게 공개하는 `assets/cv.pdf`는 별개입니다.
 
-`index.html`을 메모장이나 코드 편집기로 열고, 수정하려는 문장을 검색해서 바꾸면 됩니다. `<...>`로 둘러싸인 부분은 화면 구조를 만드는 코드이므로 처음에는 문장만 수정하는 것이 쉽습니다. 저장 후 브라우저를 새로고침하세요.
+## 2. 논문과 상장 파일 정리
 
-CV를 갱신할 때는 새 PDF를 `assets` 폴더에 넣고 파일 이름을 **`cv.pdf`**로 맞춰 기존 파일을 교체하세요. 프로필 사진도 같은 방식으로 `profile.png`를 교체할 수 있습니다.
-
-## 3. GitHub에 홈페이지 보관함 만들기 (최초 설정 참고)
-
-GitHub 계정 이름은 **`sohyunkim3`**입니다. 그 안에 홈페이지 파일을 담을 **저장소(repository)**가 있습니다. 처음에는 터미널이나 Git 명령어를 몰라도 웹 화면에서 작업할 수 있습니다.
-
-1. GitHub에 로그인하고 [새 저장소 만들기](https://github.com/new)를 여세요.
-2. Owner가 `sohyunkim3`인지 확인하세요.
-3. Repository name에 **`sohyunkim3.github.io`**를 정확히 입력하세요.
-4. **Public**을 선택하고 **Add README**를 켠 뒤 **Create repository**를 누르세요.
-
-기존 홈페이지 저장소를 사용한다면 **Settings → General**에서 저장소 이름을 `sohyunkim3.github.io`로 바꿔 사용하면 됩니다. 이미 같은 이름의 저장소가 있다면 새로 만들지 말고 그 저장소를 여세요.
-
-## 4. 홈페이지 파일 올리기
-
-1. 저장소의 **Code** 화면에서 **Add file → Upload files**를 누르세요.
-2. 이 폴더에서 `index.html`, `styles.css`, `script.js`와 **`assets` 폴더 자체**를 업로드 영역으로 끌어다 놓으세요. `README.md`도 함께 올려도 됩니다.
-3. 아래의 **Commit changes**를 눌러 저장하세요. Commit은 변경 내용을 저장하고 기록한다는 뜻입니다.
-
-업로드 후 다음 구조로 보여야 합니다. 바깥의 `개인 홈페이지` 폴더 전체를 올려서 한 단계 더 들어가지 않도록 확인하세요.
+논문·상장은 **항목마다 폴더 하나**에 모읍니다. 홈페이지에는 `figure.png` 또는 `certificate.jpg`를 사용합니다. 원본 PDF·PNG·JPG는 각 폴더의 `sources/`에 보관하며 공개하지 않습니다.
 
 ```text
-sohyunkim3.github.io
-├── index.html
-├── styles.css
-├── script.js
-├── README.md
-└── assets
-    ├── profile.png
-    ├── cv.pdf
-    ├── favicon.svg
-    ├── icons/
-    └── research/
+publications/
+├── journal/
+│   ├── shaping-filter-ekf/              # figure.png + sources/
+│   ├── aerial-threat-review/            # 현재 그림 없음
+│   ├── bayesian-cann/                   # figure.png + sources/
+│   ├── adaptive-tobit-kalman-filter/     # figure.png + sources/
+│   └── lstm-kalman-filter/              # figure.png + sources/
+└── conference/
+    ├── threat-assessment-eda/            # 현재 그림 없음
+    └── parameter-updating-dbn/           # 현재 그림 없음
+
+awards/
+├── masters-excellence-scholarship/       # certificate.jpg + sources/
+├── national-science-technology-scholarship/ # certificate.jpg + sources/
+├── ev-energy-challenger/                 # certificate.jpg + sources/
+└── academic-excellence-scholarships/      # 현재 그림 없음
 ```
 
-`assets` 안의 파일을 홈페이지 파일과 같은 위치로 꺼내 놓으면 사진과 CV 링크가 작동하지 않습니다. 원본 자료가 있는 `CV` 폴더는 업로드할 필요가 없습니다.
+그림이 없는 폴더의 `.gitkeep`는 빈 폴더를 Git에 남겨 두는 파일입니다. 그림을 넣기 전까지 그대로 두면 됩니다. 새 상장은 생년월일과 증서번호를 가린 공개용 `certificate.jpg`를 사용하고, 원본은 `sources/`에 보존합니다.
 
-## 5. 인터넷에 공개하기
+## 3. 연구 그림 추가·교체
 
-1. 저장소의 **Settings → Pages**로 들어가세요.
-2. **Build and deployment**에서 Source를 **Deploy from a branch**로 선택하세요.
-3. Branch는 **main**, 폴더는 **/(root)**로 선택하고 **Save**를 누르세요.
-4. 배포가 끝나면 Pages 화면의 **Visit site**로 확인하세요.
-
-공개 주소는 **[https://sohyunkim3.github.io/](https://sohyunkim3.github.io/)**입니다. 처음 공개하거나 내용을 바꾼 뒤 반영되기까지 최대 10분 정도 걸릴 수 있습니다. 설정을 마친 뒤에는 Pages 화면의 배포 상태를 확인하세요.
-
-## 6. 나중에 업데이트하기
-
-컴퓨터에서 파일을 수정하고 미리보기로 확인한 다음, GitHub의 같은 위치에 수정한 파일을 다시 업로드하고 **Commit changes**를 누르세요. Pages 설정은 처음 한 번이면 됩니다. GitHub에 올린 변경 내용이 홈페이지에 자동으로 반영됩니다.
-
-GitHub 화면에서도 파일을 열고 연필 모양의 **Edit** 버튼으로 간단한 문구를 수정할 수 있습니다. 이때 컴퓨터의 파일도 같은 내용으로 맞춰 두면 다음 업로드 때 헷갈리지 않습니다.
-
-## 7. 연구 그림 추가/교체
-
-각 논문에 그림을 하나씩 선택해서 넣을 수 있습니다. 원본 연구 파일은 컴퓨터에 그대로 두고, 홈페이지에 사용할 그림만 **PNG로 저장해 `assets/research` 폴더**에 넣으세요. 파일 이름은 `paper-figure.png`처럼 영문으로 간단하게 정하면 편합니다.
-
-`index.html`에서 해당 논문 제목을 찾은 다음, 그 논문의 `<article ...>` 시작 부분에 그림 경로와 설명을 넣으세요. 아래 예시를 복사해 사용할 수 있습니다. `data-type`은 기존 값(`journal`, `preprint`, `conference`)을 유지하세요.
+해당 논문 폴더의 `figure.png`를 교체하세요. 새 그림을 연결할 때는 `index.html`에서 논문 제목을 찾은 다음, 그 논문의 `<article ...>` 시작 부분에 경로와 짧은 그림 설명을 넣습니다. `data-type`은 기존 값을 유지하세요.
 
 ```html
-<article class="publication" data-type="journal" data-image="assets/research/paper-figure.png" data-image-alt="Tracking results of the proposed filter">
+<article class="publication" data-type="journal" data-image="publications/journal/shaping-filter-ekf/figure.png" data-image-alt="Comparison of railway vehicle estimation results">
 ```
 
-`paper-figure.png`를 실제 파일 이름으로 바꾸고, `data-image-alt`에는 그림 내용을 짧게 적으세요. 그림과 논문 정보의 배치는 자동으로 맞춰집니다.
-
-그림 없이 글만 표시하려면 경로를 비워 두면 됩니다.
+그림 없이 글만 표시하려면 경로를 비우세요.
 
 ```html
 <article class="publication" data-type="journal" data-image="">
 ```
 
-`data-image` 속성을 아예 넣지 않아도 글만 표시됩니다. 그림 파일을 찾을 수 없거나 불러오기에 실패하면 글만 표시되도록 되어 있습니다.
+`data-image` 속성을 넣지 않아도 글만 표시됩니다. 그림을 불러오지 못해도 글은 그대로 보입니다. 그림이 있으면 데스크톱에서 같은 크기의 왼쪽 썸네일로 배치되고, 누르면 크게 볼 수 있습니다. 좁은 모바일 화면에도 자동으로 맞춰집니다.
 
-그림을 교체할 때는 같은 이름의 PNG 파일을 덮어쓰면 됩니다. 다른 이름을 사용했다면 `data-image`의 경로도 바꾸세요. 컴퓨터에서 확인한 뒤 변경한 `index.html`과 `assets/research` 안의 그림을 GitHub의 같은 위치에 업로드하면 됩니다.
+## 4. GitHub에서 홈페이지 업데이트하기
 
-공식 도움말: [사이트 만들기](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [Pages 공개 설정](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+**Git이 내 컴퓨터의 폴더 전체를 자동으로 업로드하는 것은 아닙니다. 선택한 파일의 변경 내용을 저장하고 GitHub에 반영하는 방식입니다.** 컴퓨터에서 수정한 것만으로 공개 홈페이지가 바뀌지는 않습니다.
+
+처음에는 터미널 없이 GitHub 웹 화면에서 수정할 수 있습니다.
+
+1. [기존 홈페이지 저장소](https://github.com/sohyunkim3/sohyunkim3.github.io)의 **Code** 화면을 여세요.
+2. 문구만 바꿀 때는 `index.html`을 열고 연필 모양의 **Edit** 버튼으로 수정한 뒤 **Commit changes**를 누르세요. Commit은 변경 내용을 저장하고 기록한다는 뜻입니다.
+3. 컴퓨터에서 고친 파일을 올릴 때는 **GitHub의 같은 폴더**를 연 뒤 **Add file → Upload files**를 누르세요. 예를 들어 연구 그림을 바꿨다면 `publications/journal/shaping-filter-ekf/` 안에서 **`figure.png` 하나만** 선택합니다. 상장은 해당 `awards/항목이름/` 안에서 **`certificate.jpg` 하나만** 선택합니다.
+4. `index.html`, `styles.css`, `script.js`는 저장소 맨 위에 올리고, CV는 `assets/` 안에 `cv.pdf`로 올리세요. 올릴 파일을 확인한 다음 **Commit changes**를 누르세요.
+
+**웹 화면의 Upload files에는 `.gitignore`의 제외 규칙이 적용되지 않습니다.** `sources/`, `CV/`, 이 작업 폴더 전체, 또는 `sources/`가 든 논문·상장 폴더를 통째로 끌어다 놓지 마세요. 공개할 `figure.png`나 `certificate.jpg` 등 사이트용 파일만 직접 선택하세요. `.gitignore`는 로컬 Git에서 원본용 `sources/`와 `CV/`를 제외하는 용도입니다.
+
+파일 위치를 바꾸면 `index.html`의 경로도 함께 바꿔야 합니다. GitHub에서 직접 문구를 고친 경우에는 컴퓨터 파일도 같은 내용으로 맞춰 두면 다음 업로드 때 헷갈리지 않습니다.
+
+## 5. 공개 상태 확인하기
+
+저장소의 **Settings → Pages**에서 공개 상태를 확인할 수 있습니다. 공개 설정은 **Deploy from a branch → main → /(root) → Save**입니다. 설정이 되어 있으면 파일을 바꿀 때마다 다시 설정할 필요가 없습니다.
+
+변경 내용이 [https://sohyunkim3.github.io/](https://sohyunkim3.github.io/)에 반영되기까지 최대 10분 정도 걸릴 수 있습니다. Pages 화면의 **Visit site**로 확인하세요.
+
+공식 도움말: [GitHub Pages 공개 설정](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)

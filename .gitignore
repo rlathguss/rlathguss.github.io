@@ -1,5 +1,8 @@
 # Original CV source and LaTeX working files stay on this computer.
 CV/
+# Full-resolution originals stay local inside each publication/award folder.
+publications/**/sources/
+awards/**/sources/
 *.aux
 *.log
 *.out
