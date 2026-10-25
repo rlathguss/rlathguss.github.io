@@ -13,7 +13,7 @@ CV를 바탕으로 만든 영문 연구자 홈페이지입니다. 간결한 한 
 
 - `index.html`: 자기소개, 연구, 논문 등 화면에 표시되는 내용
 - `styles.css`: 색상, 글꼴, 화면 배치
-- `script.js`: 현재 읽는 구간의 메뉴 표시. 이 파일 없이도 내용과 링크는 작동합니다.
+- `script.js`: 현재 읽는 구간의 메뉴 표시와 선택적 연구 그림·확대 보기. 이 파일 없이도 본문과 논문 링크는 작동합니다.
 - `assets/profile.png`: 프로필 사진
 - `assets/cv.pdf`: 방문자가 내려받는 CV
 
@@ -51,7 +51,9 @@ sohyunkim3.github.io
 └── assets
     ├── profile.png
     ├── cv.pdf
-    └── favicon.svg
+    ├── favicon.svg
+    ├── icons/
+    └── research/
 ```
 
 `assets` 안의 파일을 홈페이지 파일과 같은 위치로 꺼내 놓으면 사진과 CV 링크가 작동하지 않습니다. 원본 자료가 있는 `CV` 폴더는 업로드할 필요가 없습니다.
@@ -70,5 +72,27 @@ sohyunkim3.github.io
 컴퓨터에서 파일을 수정하고 미리보기로 확인한 다음, GitHub의 같은 위치에 수정한 파일을 다시 업로드하고 **Commit changes**를 누르세요. Pages 설정은 처음 한 번이면 됩니다. GitHub에 올린 변경 내용이 홈페이지에 자동으로 반영됩니다.
 
 GitHub 화면에서도 파일을 열고 연필 모양의 **Edit** 버튼으로 간단한 문구를 수정할 수 있습니다. 이때 컴퓨터의 파일도 같은 내용으로 맞춰 두면 다음 업로드 때 헷갈리지 않습니다.
+
+## 7. 연구 그림 추가/교체
+
+각 논문에 그림을 하나씩 선택해서 넣을 수 있습니다. 원본 연구 파일은 컴퓨터에 그대로 두고, 홈페이지에 사용할 그림만 **PNG로 저장해 `assets/research` 폴더**에 넣으세요. 파일 이름은 `paper-figure.png`처럼 영문으로 간단하게 정하면 편합니다.
+
+`index.html`에서 해당 논문 제목을 찾은 다음, 그 논문의 `<article ...>` 시작 부분에 그림 경로와 설명을 넣으세요. 아래 예시를 복사해 사용할 수 있습니다. `data-type`은 기존 값(`journal`, `preprint`, `conference`)을 유지하세요.
+
+```html
+<article class="publication" data-type="journal" data-image="assets/research/paper-figure.png" data-image-alt="Tracking results of the proposed filter">
+```
+
+`paper-figure.png`를 실제 파일 이름으로 바꾸고, `data-image-alt`에는 그림 내용을 짧게 적으세요. 그림과 논문 정보의 배치는 자동으로 맞춰집니다.
+
+그림 없이 글만 표시하려면 경로를 비워 두면 됩니다.
+
+```html
+<article class="publication" data-type="journal" data-image="">
+```
+
+`data-image` 속성을 아예 넣지 않아도 글만 표시됩니다. 그림 파일을 찾을 수 없거나 불러오기에 실패하면 글만 표시되도록 되어 있습니다.
+
+그림을 교체할 때는 같은 이름의 PNG 파일을 덮어쓰면 됩니다. 다른 이름을 사용했다면 `data-image`의 경로도 바꾸세요. 컴퓨터에서 확인한 뒤 변경한 `index.html`과 `assets/research` 안의 그림을 GitHub의 같은 위치에 업로드하면 됩니다.
 
 공식 도움말: [사이트 만들기](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), [Pages 공개 설정](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
