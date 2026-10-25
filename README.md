@@ -82,3 +82,13 @@ awards/
 변경 내용이 [https://sohyunkim3.github.io/](https://sohyunkim3.github.io/)에 반영되기까지 최대 10분 정도 걸릴 수 있습니다. Pages 화면의 **Visit site**로 확인하세요.
 
 공식 도움말: [GitHub Pages 공개 설정](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+## 6. 방문 통계 확인하기
+
+홈페이지에는 Google Analytics 측정 ID **`G-3KG1H16RN8`**를 연결했습니다. 측정 대상 주소는 `https://sohyunkim3.github.io/`이며, GitHub 저장소 화면 방문과는 별개입니다. `index.html`의 `<head>` 안에 태그를 한 번만 넣었으므로 같은 태그를 추가로 붙일 필요가 없습니다.
+
+[Google Analytics](https://analytics.google.com/)에서 이 측정 ID가 연결된 속성을 선택하고 **보고서 → 실시간**을 열면 최근 접속을 확인할 수 있습니다. 일반 보고서의 방문자 수·지역·참여 시간은 수집 이후부터 쌓이며, 반영까지 24–48시간 걸릴 수 있습니다.
+
+**관리 → 데이터 스트림 → 해당 웹 스트림 → 향상된 측정**에서 파일 다운로드와 외부 링크 클릭이 켜져 있으면 CV PDF 클릭과 논문 링크 클릭도 확인할 수 있습니다. About·Publications·Background는 한 페이지 안의 구간이므로 각각 별도의 페이지 조회로 집계되는 구성은 아닙니다.
+
+공식 도움말: [태그 설치](https://support.google.com/analytics/answer/9744165?hl=ko), [실시간 보고서](https://support.google.com/analytics/answer/9271392?hl=ko), [향상된 측정](https://support.google.com/analytics/answer/9216061?hl=ko)
