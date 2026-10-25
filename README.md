@@ -2,7 +2,10 @@
 
 CV를 바탕으로 만든 영문 연구자 홈페이지입니다. 별도 프로그램 설치 없이 열 수 있습니다.
 
-**현재는 내 컴퓨터에 홈페이지 파일을 만든 단계입니다. GitHub 업로드와 인터넷 공개는 아직 하지 않았습니다.** 아래 순서로 공개하면 예상 주소는 [https://rlathguss.github.io/](https://rlathguss.github.io/)입니다.
+**홈페이지 주소:** [https://rlathguss.github.io/](https://rlathguss.github.io/)  
+**파일 보관함:** [rlathguss/rlathguss.github.io](https://github.com/rlathguss/rlathguss.github.io)
+
+아래에는 내용 수정 방법과 최초 공개 설정을 정리했습니다. 실제 배포 상태는 저장소의 **Settings → Pages**에서 확인할 수 있습니다.
 
 ## 1. 내 컴퓨터에서 보기
 
@@ -20,7 +23,7 @@ CV를 바탕으로 만든 영문 연구자 홈페이지입니다. 별도 프로�
 
 CV를 갱신할 때는 새 PDF를 `assets` 폴더에 넣고 파일 이름을 **`cv.pdf`**로 맞춰 기존 파일을 교체하세요. 프로필 사진도 같은 방식으로 `profile.png`를 교체할 수 있습니다.
 
-## 3. GitHub에 홈페이지 보관함 만들기
+## 3. GitHub에 홈페이지 보관함 만들기 (최초 설정 참고)
 
 GitHub 계정은 [rlathguss](https://github.com/rlathguss)입니다. 그 안에 홈페이지 파일을 담을 **저장소(repository)**를 하나 만들면 됩니다. 처음에는 터미널이나 Git 명령어를 몰라도 웹 화면에서 작업할 수 있습니다.
 
@@ -47,7 +50,8 @@ rlathguss.github.io
 ├── README.md
 └── assets
     ├── profile.png
-    └── cv.pdf
+    ├── cv.pdf
+    └── favicon.svg
 ```
 
 `assets` 안의 두 파일을 홈페이지 파일과 같은 위치로 꺼내 놓으면 사진과 CV 링크가 작동하지 않습니다. 원본 자료가 있는 `CV` 폴더는 업로드할 필요가 없습니다.
@@ -59,7 +63,7 @@ rlathguss.github.io
 3. Branch는 **main**, 폴더는 **/(root)**로 선택하고 **Save**를 누르세요.
 4. 배포가 끝나면 Pages 화면의 **Visit site**로 확인하세요.
 
-예상 공개 주소는 **[https://rlathguss.github.io/](https://rlathguss.github.io/)**입니다. 처음 공개하거나 내용을 바꾼 뒤 반영되기까지 최대 10분 정도 걸릴 수 있습니다. Save를 누르기 전까지 이 안내만으로 사이트가 공개되지는 않습니다.
+공개 주소는 **[https://rlathguss.github.io/](https://rlathguss.github.io/)**입니다. 처음 공개하거나 내용을 바꾼 뒤 반영되기까지 최대 10분 정도 걸릴 수 있습니다. 설정을 마친 뒤에는 Pages 화면의 배포 상태를 확인하세요.
 
 ## 6. 나중에 업데이트하기
 
