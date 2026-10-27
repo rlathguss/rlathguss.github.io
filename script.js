@@ -1,3 +1,41 @@
+// The Google tag in the page head queues events while its SDK loads. Only the
+// public site sends these events; previews and local checks stay out of reports.
+function sendSiteEvent(name, parameters = {}) {
+  if (window.location.hostname !== 'sohyunkim3.github.io' || typeof window.gtag !== 'function') return;
+  try {
+    window.gtag('event', name, { send_to: 'G-3KG1H16RN8', ...parameters });
+  } catch {
+    // Analytics must never interrupt navigation or the figure viewer.
+  }
+}
+
+function trackContentClick(event) {
+  if (event.type === 'click' && event.button !== 0) return;
+  if (event.type === 'auxclick' && event.button !== 1) return;
+
+  const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+  const link = target?.closest('a[href]');
+  if (!link) return;
+
+  if (link.origin === window.location.origin && link.pathname === '/assets/cv.pdf') {
+    sendSiteEvent('cv_open');
+    return;
+  }
+
+  const publication = link.closest('.publication[data-paper-slug]');
+  const paperSlug = publication?.dataset.paperSlug;
+  if (!paperSlug) return;
+
+  if (link.matches('.publication-body h3 a')) {
+    sendSiteEvent('publication_click', { paper_slug: paperSlug });
+  } else if (link.matches('.figure-link')) {
+    sendSiteEvent('figure_open', { paper_slug: paperSlug });
+  }
+}
+
+document.addEventListener('click', trackContentClick);
+document.addEventListener('auxclick', trackContentClick);
+
 // Navigation highlighting is optional; all content and links work without JavaScript.
 if ('IntersectionObserver' in window) {
   const links = [...document.querySelectorAll('.site-header nav a[href^="#"]')];
